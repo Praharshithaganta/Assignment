@@ -1,0 +1,68 @@
+Day-30(29 Aug)
+	-Worked on C:\Users\DELL\Downloads\DevOps Training\K8s 
+	-I opened gitbash in above folder and I gave commands like:
+	1. aws configure
+	2. mkdir eks-lab
+	3. cd eks-lab
+	4. created a vpc
+	5. main.tf, variable.tf, terraform.tfvars updated my vpc id, private and public subnet ids and username of aws 
+	6. terraform init
+	7. terraform plan
+	8. terraform import aws_eks_access_entry.clahaan_user5 praharshitha-eks:arn:aws:iam::909688465000:user/clahaan-user5
+	(optional-If any error in terraform apply)
+	9. terraform apply
+	10. aws eks update-kubeconfig --name Pra-eks-node --region ap-south-1
+	11. kubectl get nodes
+	12. aws eks list-clusters --region ap-south-1
+	13. terraform destroy
+	
+Day-31(30 Aug)
+	-Executed day-30 content
+	-Worked on C:\Users\DELL\Downloads\DevOps Training\Kubernetes notepad++ files.
+	
+Day-32(1 Sep)
+	-Worked on C:\Users\DELL\Downloads\DevOps Training\K8s notepad++ files.
+	
+Day-33(2 Sep)
+	-Worked on C:\Users\DELL\Downloads\DevOps Training\2nd Sep notepad++ files.
+	
+Day-34 (3 Sep)
+	-To connect other cluster commands are
+	aws eks update-kubeconfig --region ap-south-1 --name user5-eks1
+	kubectl get nodes
+	-Worked on C:\Users\DELL\Downloads\DevOps Training\3Sep word file.
+	
+Day-35(4 Sep)
+	-Worked on Helm from C:\Users\DELL\Downloads\DevOps Training\4Sep
+	YT Link https://youtu.be/7A5cH8iqgHU?si=hOQcDu_L98l7X65t
+	
+	Helm Installation From Script: https://helm.sh/docs/intro/install/
+	$ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+	$ chmod 700 get_helm.sh
+	$ ./get_helm.sh
+	$ helm version
+	YT Link https://youtu.be/DQk8HOVlumI?si=9-gjEy9-C2aUae7z
+	
+	Kubernetes Metrics Server
+	Installing the Chart https://artifacthub.io/
+	$ helm repo add metrics-server https://kubernetes-sigs.github.io/metrics-server/
+	$ helm upgrade --install metrics-server metrics-server/metrics-server (Don't execute this)
+	Now, will install the chart using the below helm install command.
+	$ helm upgrade --install metrics-server metrics-server/metrics-server -n kube-system
+	$ helm ls -n kube-system
+	$ kubectl top nodes
+	Now, will increase the replicas using --set replicas 
+	$ helm upgrade --install metrics-server metrics-server/metrics-server -n kube-system --set replicas=2
+	$ helm ls -n kube-system
+	In case  something is not working we can rollback to the previous version. 
+	$ helm rollback metrics-server -n kube-system
+	Revisions are saved in secrets objects of Kubernetes cluster. 
+	$ kubectl get secrets -n kube-system | grep "metrics-server"
+	Uninstalling the chart metrics-server. 
+	$ helm uninstall metrics-server -n kube-system
+	
+	-Then creating chart C:\Users\DELL\Downloads\DevOps Training\4Sep from Helm-for-Freshers-Step-by-Step-Guide PDF file.
+	
+Day-36(5 Sep)
+	-worked on C:\Users\DELL\Downloads\Materials DevOps\Day 34 - 38 Prometheus Grafana 59pages file.
+	
